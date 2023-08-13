@@ -16,10 +16,6 @@ contract WLYX is LSP7DigitalAsset("Wrapped LYX", "WLYX", msg.sender, false) {
     }
 
     function deposit() public payable {
-        // TODO: add a check that the user has enough LYX? Or only in tests?
-        // test if the custom error get triggered,
-        // or if the function call fail before even getting into the function body
-
         emit Deposit(msg.sender, msg.value);
         _mint(msg.sender, msg.value, true, "Converted LYX to WLYX");
     }
